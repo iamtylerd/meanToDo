@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ToDo App</title>
+	<link rel="stylesheet" href="/lib/materialize/dist/css/materialize.min.css">
+</head>
+<body>
+	<div ng-app="meantodo">
+		<div class="container">
+			<div ng-view></div>
+		</div>
+	</div>
+	<!-- 3rd Party Libs -->
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/angular-route/angular-route.min.js"></script>
+
+	<!-- Controllers -->
+	<script src="/app/main.js"></script>
+	<script src="/controller/MainCtrl.js"></script>
+</body>
+</html>

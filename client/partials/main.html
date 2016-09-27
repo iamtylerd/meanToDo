@@ -1,0 +1,21 @@
+<h1>ToDo's</h1>
+
+<form ng-submit="sendTodo()">
+	<input type="text" ng-model="todo"/>
+	<input type="hidden" ng-model="completed" value=false/>
+	<input type="hidden" ng-model="date" value={{date}}/>
+	<input type="submit" />
+</form>
+<hr />
+<h2>Things to do</h2>
+<ul>
+	<li ng-repeat="todo in todos | filter: {completed: false}">
+		{{todo.todo}} <input type="checkbox" id=`completedBox{{$index}}` ng-model="todo.completed" ng-change="updateComplete(todo)" /> <label for=`completedBox{{$index}}`>Completed?</label>
+	</li>
+</ul>
+<h2>Things Done</h2>
+<ul>
+	<li ng-repeat="todo in todos | filter: {completed: true}">
+		{{todo.todo}} <input type="checkbox" id=`completedBox{{$index}}` ng-model="todo.completed" /> <label for=`completedBox{{$index}}`>Completed?</label><button class="btn" type="button" ng-click="delete(todo, $index)">Delete</button>
+	</li>
+</ul>
